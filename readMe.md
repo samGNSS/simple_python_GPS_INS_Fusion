@@ -1,1 +1,3 @@
-Code is almost ready to be published
+Code is published
+
+Documentation will be added gradually as I find time.

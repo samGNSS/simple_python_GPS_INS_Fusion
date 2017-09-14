@@ -1,9 +1,5 @@
 from __future__ import division #enables default float division
 import numpy as np #used for signal processing
-#import scipy.signal as signal #used for signal processing
-#import matplotlib.pyplot as plt #used for plotting, mainly for debugging
-#from mpl_toolkits.mplot3d import Axes3D
-#import pandas as pd #has better CSV capabilities than numpy
 import serial #used to communicate with the sensors
 import time #used for timing sections of code, and will be used to meter sensor communications
 
@@ -86,20 +82,28 @@ def parseNMEA(fileName = 'nmeaRecord4.txt',numpyFlag = 1):
     #define returns as empty lists
     #-latitude
     lat = []
+
     #-longitude
     lon = []
+
     #-altitude
     alti = []
+
     #-velocity
     vel = []
+
     #-satellite PRN
     prn = []
+
     #-satellite elevation angle
     ele = []
+
     #-satellite azimuth angle
     azi = []
+
     #-satellite signal to noise ratio
     snr = []
+
     #loop over fileContentents and fill the lists
     for line in xrange(len(fileContents)):
         #-Look for GGA message, if found extract latitude, longitude, and altitude

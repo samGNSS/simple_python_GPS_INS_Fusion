@@ -14,10 +14,10 @@ from mpl_toolkits.mplot3d import Axes3D
 import pandas as pd #has better CSV capabilities than numpy
 import serial #used to communicate with the sensors
 import time #used for timing sections of code, and will be used to meter sensor communications
-from otherFunctions import * #populate name space with otherFunctions code
+from util.otherFunctions import * #populate name space with otherFunctions code
 
 #class to simulate IMU readings
-class imu_sim(object):
+class imuSim(object):
     def __init__(self,latStart,lonStart,latEnd,lonEnd,alti = 2004,sim = 'lin',simTime = 3600,updateRate = 100,noise = False,bias = False):
         #possible values for sim are 'lin', 'circ' or 'stat'
         if(sim != 'lin') and (sim != 'circ') and (sim != 'stat'):
@@ -53,19 +53,21 @@ class imu_sim(object):
             self.gpsScale = ((latEnd - latStart)/(float(self.Tlap)))
         #get IMU bias values
         if bias:
-            self.biasA   = np.sqrt(1e-2)*np.array([np.random.randn(1)[0],np.random.randn(1)[0],np.random.randn(1)[0]])
-            self.biasG   = np.sqrt(1e-1)*np.array([np.random.randn(1)[0],np.random.randn(1)[0],np.random.randn(1)[0]])
-            self.biasMag = np.sqrt(1e-1)*np.array([np.random.randn(1)[0],np.random.randn(1)[0],np.random.randn(1)[0]])
+            self.biasA   = np.sqrt(1e2)*np.array([np.random.randn(1)[0],np.random.randn(1)[0],np.random.randn(1)[0]])
+            self.biasG   = 0#np.sqrt(1e-1)*np.array([np.random.randn(1)[0],np.random.randn(1)[0],np.random.randn(1)[0]])
+            self.biasMag = 0#np.sqrt(1e-1)*np.array([np.random.randn(1)[0],np.random.randn(1)[0],np.random.randn(1)[0]])
         else:
             self.biasA   = 0
             self.biasG   = 0
             self.biasMag = 0
 
-        #init GPS reading
-        self.gpsData = np.hstack((float(latStart),float(lonStart),float(alti),0.0))
-        pass
+        print 'accel bias: ', self.biasA
 
-    def accel(self):
+        #init GPS reading
+        print latStart,lonStart,alti
+        self.gpsData = np.hstack((float(latStart),float(lonStart),float(alti),0.0))
+
+    def _accel(self):
         g0 = 9.7803253359*((1 + 0.001931853*(np.sin(self.lat))**2)/np.sqrt(1 - self.eccenSquare*(np.sin(self.lat))**2))
         gN = (-8.08e-9)*self.alti*np.sin(2*self.lat)
         gD = g0*(1 - (1 + self.flat*(1-2*(np.sin(self.lat)**2)) + ((self.omegaE*self.R0)**2)*(6356752.3142)/self.mu)*
@@ -87,9 +89,8 @@ class imu_sim(object):
         else:
             #stationary
             self.accelMeas = np.array([-gN,0,-gD]) + self.noiseA + self.biasA
-        pass
 
-    def gyro(self):
+    def _gyro(self):
         if self.sim == 'lin' or self.sim == 'stat':
             # self.RE = self.R0/(np.sqrt(1-self.eccenSquare*(np.sin(self.lat))**2)) #transverse radius
             # self.RN = (self.R0*(1-self.eccenSquare))/((1 - self.eccenSquare*(np.sin(self.lat))**2)**(1.5))
@@ -101,12 +102,12 @@ class imu_sim(object):
             self.gyroMeas = .00000000000001*self.omegaEarth #+ self.noiseG + self.biasG
         pass
 
-    def mag(self):
+    def _mag(self):
         #probably won't touch the magnetometer, but a simplifying assumption is to only point north...
         self.magMeas = np.zeros(3) + self.noiseMag + self.biasMag
         pass
 
-    def gps(self):
+    def _gps(self):
         if self.sim == 'lin':
             #use a linear interpolation
             if self.sampleTime < 100:
@@ -131,7 +132,7 @@ class imu_sim(object):
             self.gpsData[3] = 0 + np.sqrt(7.3755e-03)*np.random.randn(1)[0]
         pass
 
-    def sample(self,lat,alti):
+    def sample(self):
         if self.noiseFlag:
             self.noiseA   = np.array([np.sqrt(3.22026513267e-05)*np.random.randn(1)[0]
                                      ,np.sqrt(3.23082291483e-05)*np.random.randn(1)[0]
@@ -148,14 +149,17 @@ class imu_sim(object):
             self.noiseMag  = np.zeros(3)
             self.noiseGPS  = np.zeros(4)
 
-        self.lat = lat
-        self.alti = alti
-        self.accel()
-        self.gyro()
-        self.mag()
+        self._accel()
+        self._gyro()
+        self._mag()
+
         self.accelMeas /= 9.8
         self.gyroMeas = (180./np.pi)*self.gyroMeas
         if (self.sampleTime % 1 < 1e-5) or ((np.abs((self.sampleTime % 1) - 1)) < 1e-5):
-            self.gps()
+            self._gps()
+            self.lat = self.gpsData[0]
+            self.lon = self.gpsData[1]
+            self.alti = self.gpsData[2]
         self.sampleTime += self.ts
+
         return np.hstack((self.accelMeas,self.gyroMeas,self.magMeas,self.gpsData)).flatten()

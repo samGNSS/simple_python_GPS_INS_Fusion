@@ -14,8 +14,8 @@ from mpl_toolkits.mplot3d import Axes3D
 import pandas as pd #has better CSV capabilities than numpy
 import serial #used to communicate with the sensors
 import time #used for timing sections of code, and will be used to meter sensor communications
-from otherFunctions import * #populate name space with otherFunctions code
-from navFunctions import * #populate name space with navFunctions code
+from util.otherFunctions import * #populate name space with otherFunctions code
+from util.navFunctions import * #populate name space with navFunctions code
 
 ##debug function, reacts to nan values returned from the Kalman filter
 def nanDebug(writeValues):
@@ -28,7 +28,7 @@ def nanDebug(writeValues):
 
 print 'Running test...'
 
-navTime = np.arange(3600*100. - 3000.)
+navTime = np.arange(50000)
 lat     = np.zeros(len(navTime)+1)
 lon     = np.zeros(len(navTime)+1)
 alti    = np.zeros(len(navTime)+1)
@@ -53,7 +53,7 @@ biasAz  = np.zeros((len(navTime)+1))
 lat[0] = convert2decimalDeg(3.852355371e+03)*(np.pi/180)
 lon[0] = convert2decimalDeg(1.044188916e+04)*(np.pi/180)
 alti[0] = 2004
-control = kalmanControl(sim='stat')
+control = kalmanControl(sim='stat',simInit=[convert2decimalDeg(3.852355371e+03),convert2decimalDeg(1.044188916e+04),2004])
 control.startup()
 for i in navTime.astype(int):
     #check for samples
@@ -66,6 +66,7 @@ for i in navTime.astype(int):
         writeValues = np.column_stack((lat,lon,alti,vel,roll,pitch,yaw,velNErr,velEErr,velDErr,latErr,lonErr, \
         altiErr,biasAx,biasAy,biasAz,biasGx,biasGy,biasGz))
         nanDebug(writeValues)
+
     if i % 10000 == 0:
         print 'GPS position in deg:\n', control.gpsPos*180./np.pi
         print
@@ -78,6 +79,8 @@ for i in navTime.astype(int):
         print 'Accel bias: ',control.prevState[12],' ',control.prevState[13],' ',control.prevState[14]
         print
         print 'Gyro bias: ',control.prevState[9],' ',control.prevState[10],' ',control.prevState[11]
+        print
+        print 'Position estimate:\n',lat[i+1],lon[i+1],alti[i+1]
         print
 
 lat *= 180/np.pi

@@ -1,0 +1,178 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACT_DUR	hardware/registers.py	/^    ACT_DUR = 0x3F # rw$/;"	v	class:XM
+ACT_THS	hardware/registers.py	/^    ACT_THS = 0x3E # rw$/;"	v	class:XM
+ADDRESS	hardware/registers.py	/^    ADDRESS = 0x1D$/;"	v	class:XM
+ADDRESS	hardware/registers.py	/^    ADDRESS = 0x6b$/;"	v	class:GYRO
+CAL_A	hardware/registers.py	/^    CAL_A = {'2G': (2.0\/32768.0),'4G': (4.0\/32768.0),'6G':(6.0\/32768.0),'8G':(8.0\/32768.0),'16G':(16.0\/32768.0)}$/;"	v	class:XM
+CAL_G	hardware/registers.py	/^    CAL_G = {'245DPS': (245.0\/32768.0), '500DPS': (500.0\/32768.0), '2000DPS': (2000.0\/32768.0)}/;"	v	class:GYRO
+CAL_M	hardware/registers.py	/^    CAL_M = {'2GAUSS': (2.0\/32768.0), '4GAUSS': (4.0\/32768.0), '8GAUSS': (8.0\/32768.0), '12GAUSS': (12.0\/32768.0)}$/;"	v	class:XM
+CAL_TEMP	hardware/registers.py	/^    CAL_TEMP = 1.0\/8.0$/;"	v	class:XM
+CLICK_CFG	hardware/registers.py	/^    CLICK_CFG = 0x38 # rw$/;"	v	class:XM
+CLICK_SRC	hardware/registers.py	/^    CLICK_SRC = 0x39 # r$/;"	v	class:XM
+CLICK_THS	hardware/registers.py	/^    CLICK_THS = 0x3A # rw$/;"	v	class:XM
+CTRL_REG0_XM	hardware/registers.py	/^    CTRL_REG0_XM = 0x1F # rw$/;"	v	class:XM
+CTRL_REG1_G	hardware/registers.py	/^    CTRL_REG1_G = 0x20 # rw$/;"	v	class:GYRO
+CTRL_REG1_XM	hardware/registers.py	/^    CTRL_REG1_XM = 0x20 # rw$/;"	v	class:XM
+CTRL_REG2_G	hardware/registers.py	/^    CTRL_REG2_G = 0x21 # rw$/;"	v	class:GYRO
+CTRL_REG2_XM	hardware/registers.py	/^    CTRL_REG2_XM = 0x21 # rw$/;"	v	class:XM
+CTRL_REG3_G	hardware/registers.py	/^    CTRL_REG3_G = 0x22 # rw$/;"	v	class:GYRO
+CTRL_REG3_XM	hardware/registers.py	/^    CTRL_REG3_XM = 0x22 # rw$/;"	v	class:XM
+CTRL_REG4_G	hardware/registers.py	/^    CTRL_REG4_G = 0x23 # rw$/;"	v	class:GYRO
+CTRL_REG4_XM	hardware/registers.py	/^    CTRL_REG4_XM = 0x23 # rw$/;"	v	class:XM
+CTRL_REG5_G	hardware/registers.py	/^    CTRL_REG5_G = 0x24 # rw$/;"	v	class:GYRO
+CTRL_REG5_XM	hardware/registers.py	/^    CTRL_REG5_XM = 0x24 # rw$/;"	v	class:XM
+CTRL_REG6_XM	hardware/registers.py	/^    CTRL_REG6_XM = 0x25 # rw$/;"	v	class:XM
+CTRL_REG7_XM	hardware/registers.py	/^    CTRL_REG7_XM = 0x26 # rw$/;"	v	class:XM
+FIFO_CTRL_REG	hardware/registers.py	/^    FIFO_CTRL_REG = 0x2E # rw$/;"	v	class:XM
+FIFO_CTRL_REG_G	hardware/registers.py	/^    FIFO_CTRL_REG_G = 0x2E # rw$/;"	v	class:GYRO
+FIFO_SRC_REG	hardware/registers.py	/^    FIFO_SRC_REG = 0x2F # r$/;"	v	class:XM
+FIFO_SRC_REG_G	hardware/registers.py	/^    FIFO_SRC_REG_G = 0x2F # r$/;"	v	class:GYRO
+GYRO	hardware/registers.py	/^class GYRO:$/;"	c
+INT1_CFG_G	hardware/registers.py	/^    INT1_CFG_G = 0x30 # rw$/;"	v	class:GYRO
+INT1_DURATION_G	hardware/registers.py	/^    INT1_DURATION_G = 0x38 # rw$/;"	v	class:GYRO
+INT1_SRC_G	hardware/registers.py	/^    INT1_SRC_G = 0x31 # r$/;"	v	class:GYRO
+INT1_TSH_XH_G	hardware/registers.py	/^    INT1_TSH_XH_G = 0x32 # rw$/;"	v	class:GYRO
+INT1_TSH_XL_G	hardware/registers.py	/^    INT1_TSH_XL_G = 0x33 # rw$/;"	v	class:GYRO
+INT1_TSH_YH_G	hardware/registers.py	/^    INT1_TSH_YH_G = 0x34 # rw$/;"	v	class:GYRO
+INT1_TSH_YL_G	hardware/registers.py	/^    INT1_TSH_YL_G = 0x35 # rw$/;"	v	class:GYRO
+INT1_TSH_ZH_G	hardware/registers.py	/^    INT1_TSH_ZH_G = 0x36 # rw$/;"	v	class:GYRO
+INT1_TSH_ZL_G	hardware/registers.py	/^    INT1_TSH_ZL_G = 0x37 # rw$/;"	v	class:GYRO
+INT_CTRL_REG_M	hardware/registers.py	/^    INT_CTRL_REG_M = 0x12 # rw$/;"	v	class:XM
+INT_GEN_1_DURATION	hardware/registers.py	/^    INT_GEN_1_DURATION = 0x33 # rw$/;"	v	class:XM
+INT_GEN_1_REG	hardware/registers.py	/^    INT_GEN_1_REG = 0x30 # rw$/;"	v	class:XM
+INT_GEN_1_SRC	hardware/registers.py	/^    INT_GEN_1_SRC = 0x31 # r$/;"	v	class:XM
+INT_GEN_1_THS	hardware/registers.py	/^    INT_GEN_1_THS = 0x32 # rw$/;"	v	class:XM
+INT_GEN_2_DURATION	hardware/registers.py	/^    INT_GEN_2_DURATION =  0x37 # rw$/;"	v	class:XM
+INT_GEN_2_REG	hardware/registers.py	/^    INT_GEN_2_REG = 0x34 # rw$/;"	v	class:XM
+INT_GEN_2_SRC	hardware/registers.py	/^    INT_GEN_2_SRC = 0x35 # r$/;"	v	class:XM
+INT_GEN_2_THS	hardware/registers.py	/^    INT_GEN_2_THS = 0x36 # rw$/;"	v	class:XM
+INT_SRC_REG_M	hardware/registers.py	/^    INT_SRC_REG_M = 0x13 # r$/;"	v	class:XM
+INT_THS_H_M	hardware/registers.py	/^    INT_THS_H_M = 0x15 # rw$/;"	v	class:XM
+INT_THS_L_M	hardware/registers.py	/^    INT_THS_L_M = 0x14 # rw$/;"	v	class:XM
+OFFSET_X_H_M	hardware/registers.py	/^    OFFSET_X_H_M = 0x17 # rw$/;"	v	class:XM
+OFFSET_X_L_M	hardware/registers.py	/^    OFFSET_X_L_M = 0x16 # rw$/;"	v	class:XM
+OFFSET_Y_H_M	hardware/registers.py	/^    OFFSET_Y_H_M = 0x19 # rw$/;"	v	class:XM
+OFFSET_Y_L_M	hardware/registers.py	/^    OFFSET_Y_L_M = 0x18 # rw$/;"	v	class:XM
+OFFSET_Z_H_M	hardware/registers.py	/^    OFFSET_Z_H_M = 0x1B # rw$/;"	v	class:XM
+OFFSET_Z_L_M	hardware/registers.py	/^    OFFSET_Z_L_M = 0x1A # rw$/;"	v	class:XM
+OUT_TEMP_H_XM	hardware/registers.py	/^    OUT_TEMP_H_XM = 0x06 # r$/;"	v	class:XM
+OUT_TEMP_L_XM	hardware/registers.py	/^    OUT_TEMP_L_XM = 0x05 # r$/;"	v	class:XM
+OUT_X_H_A	hardware/registers.py	/^    OUT_X_H_A = 0x29 # r$/;"	v	class:XM
+OUT_X_H_G	hardware/registers.py	/^    OUT_X_H_G = 0x29 # r$/;"	v	class:GYRO
+OUT_X_H_M	hardware/registers.py	/^    OUT_X_H_M = 0x09 # r$/;"	v	class:XM
+OUT_X_L_A	hardware/registers.py	/^    OUT_X_L_A = 0x28 # r$/;"	v	class:XM
+OUT_X_L_G	hardware/registers.py	/^    OUT_X_L_G = 0x28 # r$/;"	v	class:GYRO
+OUT_X_L_M	hardware/registers.py	/^    OUT_X_L_M = 0x08 # r$/;"	v	class:XM
+OUT_Y_H_A	hardware/registers.py	/^    OUT_Y_H_A = 0x2B # r$/;"	v	class:XM
+OUT_Y_H_G	hardware/registers.py	/^    OUT_Y_H_G = 0x2B # r$/;"	v	class:GYRO
+OUT_Y_H_M	hardware/registers.py	/^    OUT_Y_H_M = 0x0B # r$/;"	v	class:XM
+OUT_Y_L_A	hardware/registers.py	/^    OUT_Y_L_A = 0x2A # r$/;"	v	class:XM
+OUT_Y_L_G	hardware/registers.py	/^    OUT_Y_L_G = 0x2A # r$/;"	v	class:GYRO
+OUT_Y_L_M	hardware/registers.py	/^    OUT_Y_L_M = 0x0A # r$/;"	v	class:XM
+OUT_Z_H_A	hardware/registers.py	/^    OUT_Z_H_A = 0x2D # r$/;"	v	class:XM
+OUT_Z_H_G	hardware/registers.py	/^    OUT_Z_H_G = 0x2D # r$/;"	v	class:GYRO
+OUT_Z_H_M	hardware/registers.py	/^    OUT_Z_H_M = 0x0D # r$/;"	v	class:XM
+OUT_Z_L_A	hardware/registers.py	/^    OUT_Z_L_A = 0x2C # r$/;"	v	class:XM
+OUT_Z_L_G	hardware/registers.py	/^    OUT_Z_L_G = 0x2C # r$/;"	v	class:GYRO
+OUT_Z_L_M	hardware/registers.py	/^    OUT_Z_L_M = 0x0C # r$/;"	v	class:XM
+RANGE_A	hardware/registers.py	/^    RANGE_A = {'2G':(0b000 << 3),'4G':(0b001 << 3),'6G':(0b010 << 3),'8G':(0b011 << 3),'16G':(0b100 << 3)}$/;"	v	class:XM
+RANGE_G	hardware/registers.py	/^    RANGE_G = {'245DPS': (0b00 << 4), '500DPS': (0b01 << 4), '2000DPS': (0b10 << 4)}$/;"	v	class:GYRO
+RANGE_M	hardware/registers.py	/^    RANGE_M = {'2GAUSS': (0b00 << 5), '4GAUSS': (0b01 << 5), '8GAUSS': (0b10 << 5), '12GAUSS': (0b11 << 5)}$/;"	v	class:XM
+RATE_A	hardware/registers.py	/^               '800HZ':(0b1001 << 4),'1600HZ':(0b1010 << 4)}$/;"	v	class:XM
+REFERENCE_G	hardware/registers.py	/^    REFERENCE_G = 0x25 # rw$/;"	v	class:GYRO
+REFERENCE_X	hardware/registers.py	/^    REFERENCE_X = 0x1C # rw$/;"	v	class:XM
+REFERENCE_Y	hardware/registers.py	/^    REFERENCE_Y = 0x1D # rw$/;"	v	class:XM
+REFERENCE_Z	hardware/registers.py	/^    REFERENCE_Z = 0x1E # rw$/;"	v	class:XM
+STATUS_REG_A	hardware/registers.py	/^    STATUS_REG_A = 0x27 # r$/;"	v	class:XM
+STATUS_REG_G	hardware/registers.py	/^    STATUS_REG_G = 0x27 # r$/;"	v	class:GYRO
+STATUS_REG_M	hardware/registers.py	/^    STATUS_REG_M = 0x07 # r$/;"	v	class:XM
+TIME_LATENCY	hardware/registers.py	/^    TIME_LATENCY = 0x3C # rw$/;"	v	class:XM
+TIME_LIMIT	hardware/registers.py	/^    TIME_LIMIT = 0x3B # rw$/;"	v	class:XM
+TIME_WINDOW	hardware/registers.py	/^    TIME_WINDOW = 0x3D # rw$/;"	v	class:XM
+WHO_AM_I	hardware/registers.py	/^    WHO_AM_I = 0x0F    # r$/;"	v	class:XM
+WHO_AM_I	hardware/registers.py	/^    WHO_AM_I = 0x0F # r$/;"	v	class:GYRO
+WHO_AM_I_OK	hardware/registers.py	/^    WHO_AM_I_OK = 0x49  #r$/;"	v	class:XM
+WHO_AM_I_OK	hardware/registers.py	/^    WHO_AM_I_OK = 0xD4 #r$/;"	v	class:GYRO
+XM	hardware/registers.py	/^class XM:$/;"	c
+__init__	simulation/ins_sim.py	/^    def __init__(self,latStart,lonStart,latEnd,lonEnd,alti = 2004,sim = 'lin',simTime = 3600,updateRate = 100,noise = False,bias = False):$/;"	m	class:imuSim
+__init__	util/navFunctions.py	/^    def __init__(self,fc = [2,3],fs = 100,passGain = 1, stopGain = 70, analog = False, ftype = 'cheby2'):$/;"	m	class:digitalFilter
+__init__	util/navFunctions.py	/^    def __init__(self,fs = 100.0,leverArm = np.zeros((3,1)),measNoise = np.zeros((15,15)), sim = None, simInit = None):$/;"	m	class:kalmanControl
+_accel	simulation/ins_sim.py	/^    def _accel(self):$/;"	m	class:imuSim
+_buildStateTranMatrix	util/navFunctions.py	/^    def _buildStateTranMatrix(self):$/;"	m	class:kalmanControl
+_estimateError	util/navFunctions.py	/^    def _estimateError(self):$/;"	m	class:kalmanControl
+_getCovar	util/navFunctions.py	/^    def _getCovar(self):$/;"	m	class:kalmanControl
+_getIMUGPS	util/navFunctions.py	/^    def _getIMUGPS(self,gravConst = 0):$/;"	m	class:kalmanControl
+_getPos	util/navFunctions.py	/^    def _getPos(self):$/;"	m	class:kalmanControl
+_getRot	util/navFunctions.py	/^    def _getRot(self):$/;"	m	class:kalmanControl
+_getVel	util/navFunctions.py	/^    def _getVel(self):$/;"	m	class:kalmanControl
+_gps	simulation/ins_sim.py	/^    def _gps(self):$/;"	m	class:imuSim
+_gyro	simulation/ins_sim.py	/^    def _gyro(self):$/;"	m	class:imuSim
+_mag	simulation/ins_sim.py	/^    def _mag(self):$/;"	m	class:imuSim
+_update	util/navFunctions.py	/^    def _update(self):$/;"	m	class:kalmanControl
+alti	run_system.py	/^alti    = np.zeros(len(navTime)+1)$/;"	v
+altiErr	run_system.py	/^altiErr = np.zeros((len(navTime)+1))$/;"	v
+biasAx	run_system.py	/^biasAx  = np.zeros((len(navTime)+1))$/;"	v
+biasAy	run_system.py	/^biasAy  = np.zeros((len(navTime)+1))$/;"	v
+biasAz	run_system.py	/^biasAz  = np.zeros((len(navTime)+1))$/;"	v
+biasGx	run_system.py	/^biasGx  = np.zeros((len(navTime)+1))$/;"	v
+biasGy	run_system.py	/^biasGy  = np.zeros((len(navTime)+1))$/;"	v
+biasGz	run_system.py	/^biasGz  = np.zeros((len(navTime)+1))$/;"	v
+check	tests/test_new_stream.py	/^check = imu.configAccel(rate, fullScaleA)$/;"	v
+check	tests/test_new_stream.py	/^check = imu.configGyro(fullScaleG)$/;"	v
+check	tests/test_new_stream.py	/^check = imu.configMag(rate, fullScaleM)$/;"	v
+check	tests/test_new_stream.py	/^check = imu.init_imu()$/;"	v
+configAccel	hardware/imu_comm_new.py	/^def configAccel(rate="100HZ",fullScale="2G"):$/;"	f
+configGyro	hardware/imu_comm_new.py	/^def configGyro(fullScale = "245DPS"):$/;"	f
+configMag	hardware/imu_comm_new.py	/^def configMag(rate="100HZ",fullScale="4GAUSS"):$/;"	f
+control	run_system.py	/^control = kalmanControl(sim='stat',simInit=[convert2decimalDeg(3.852355371e+03),convert2decimalDeg(1.044188916e+04),2004])$/;"	v
+convert2DegMM	util/otherFunctions.py	/^def convert2DegMM(decDeg):$/;"	f
+convert2decimalDeg	util/otherFunctions.py	/^def convert2decimalDeg(degMin):$/;"	f
+data	tests/test_new_stream.py	/^            data = data.split(',')$/;"	v
+data	tests/test_new_stream.py	/^        data = q.get()$/;"	v
+digitalFilter	util/navFunctions.py	/^class digitalFilter(object):$/;"	c
+ecef2enu	util/otherFunctions.py	/^def ecef2enu(xc,yc,zc,xr,yr,zr, latr,lonr):$/;"	f
+f	tests/test_new_stream.py	/^f = open('newData.txt','w')$/;"	v
+ft232h	hardware/imu_comm_new.py	/^    ft232h = FT232H.FT232H()$/;"	v
+fullScaleA	tests/test_new_stream.py	/^fullScaleA = "2G"$/;"	v
+fullScaleG	tests/test_new_stream.py	/^fullScaleG = "245DPS"$/;"	v
+fullScaleM	tests/test_new_stream.py	/^fullScaleM = "4GAUSS"$/;"	v
+geodetic2ecef	util/otherFunctions.py	/^def geodetic2ecef(lat,lon,alti,model = 'wgs84',convert = 1):$/;"	f
+getAccel	hardware/imu_comm_new.py	/^def getAccel(fullScale):$/;"	f
+getMag	hardware/imu_comm_new.py	/^def getMag(fullScale):$/;"	f
+getRotation	hardware/imu_comm_new.py	/^def getRotation(fullScale):$/;"	f
+iirFilt	util/navFunctions.py	/^    def iirFilt(self,x,reset = False):$/;"	m	class:digitalFilter
+imuSim	simulation/ins_sim.py	/^class imuSim(object):$/;"	c
+init_imu	hardware/imu_comm_new.py	/^def init_imu():$/;"	f
+kalmanControl	util/navFunctions.py	/^class kalmanControl(object):$/;"	c
+lat	run_system.py	/^lat     = np.zeros(len(navTime)+1)$/;"	v
+latErr	run_system.py	/^latErr  = np.zeros(len(navTime)+1)$/;"	v
+latTrack	run_system.py	/^latTrack = np.linspace(convert2decimalDeg(3.852355371e+03),convert2decimalDeg(3.952355371e+03),len(lat))$/;"	v
+lon	run_system.py	/^lon     = np.zeros(len(navTime)+1)$/;"	v
+lonErr	run_system.py	/^lonErr  = np.zeros((len(navTime)+1))$/;"	v
+nanDebug	run_system.py	/^def nanDebug(writeValues):$/;"	f
+navTime	run_system.py	/^navTime = np.arange(50000)$/;"	v
+navigate	util/navFunctions.py	/^    def navigate(self):$/;"	m	class:kalmanControl
+parseNMEA	util/otherFunctions.py	/^def parseNMEA(fileName = 'nmeaRecord4.txt',numpyFlag = 1):$/;"	f
+pitch	run_system.py	/^pitch   = np.zeros(len(navTime)+1)$/;"	v
+q	tests/test_new_stream.py	/^q = Queue.Queue()$/;"	v
+rate	tests/test_new_stream.py	/^rate = "100HZ"$/;"	v
+recordSerial	hardware/imu_comm_new.py	/^def recordSerial(queue,portGPS = 'COM3'):$/;"	f
+record_GPS	util/otherFunctions.py	/^               fileName = 'nmeaRecord1sec.txt',fileIO = 'w'):$/;"	f
+returnIMU	hardware/imu_comm_new.py	/^def returnIMU(queue,fullScaleA = "2G",fullScaleG = "245DPS",fullScaleM = "4GAUSS"):$/;"	f
+roll	run_system.py	/^roll    = np.zeros(len(navTime)+1)$/;"	v
+sample	simulation/ins_sim.py	/^    def sample(self):$/;"	m	class:imuSim
+startTime	tests/test_new_stream.py	/^startTime = time.time()$/;"	v
+startup	util/navFunctions.py	/^    def startup(self):$/;"	m	class:kalmanControl
+stopTime	tests/test_new_stream.py	/^stopTime = 100$/;"	v
+t1	tests/test_new_stream.py	/^t1 = threading.Thread(target=imu.returnIMU, args=(q,"2G","245DPS","4GAUSS"))$/;"	v
+t2	tests/test_new_stream.py	/^t2 = threading.Thread(target=imu.recordSerial, args=(q,'COM3'))$/;"	v
+vel	run_system.py	/^vel     = np.zeros((len(navTime)+1,3))$/;"	v
+velDErr	run_system.py	/^velDErr = np.zeros(len(navTime)+1)$/;"	v
+velEErr	run_system.py	/^velEErr = np.zeros(len(navTime)+1)$/;"	v
+velNErr	run_system.py	/^velNErr = np.zeros((len(navTime)+1))$/;"	v
+yaw	run_system.py	/^yaw     = np.zeros(len(navTime)+1)$/;"	v

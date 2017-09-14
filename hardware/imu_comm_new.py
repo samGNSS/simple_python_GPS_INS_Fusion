@@ -1,11 +1,13 @@
-import Adafruit_GPIO.FT232H as FT232H
+try:
+    import Adafruit_GPIO.FT232H as FT232H
+    FT232H.use_FT232H()
+    ft232h = FT232H.FT232H()
+except ImportError:
+    print("Missing Adafruit library!")
 import numpy as np
 import serial
 import time
 from registers import XM,GYRO
-FT232H.use_FT232H()
-ft232h = FT232H.FT232H()
-
 
 def init_imu():
     #check if the Accel/Mag is there
@@ -39,7 +41,7 @@ def configAccel(rate="100HZ",fullScale="2G"):
 def configMag(rate="100HZ",fullScale="4GAUSS"):
     #-set i2c to point at accelerometer & Mag
     i2c = FT232H.I2CDevice(ft232h,XM.ADDRESS)
-    #set magnetometer to 100Hz 
+    #set magnetometer to 100Hz
     i2c.write8(XM.CTRL_REG5_XM,0xF4)
     #Range 4GAUSS
     i2c.write8(XM.CTRL_REG6_XM,0x20)
@@ -53,14 +55,14 @@ def configMag(rate="100HZ",fullScale="4GAUSS"):
 
 def configGyro(fullScale = "245DPS"):
     i2c = FT232H.I2CDevice(ft232h,GYRO.ADDRESS)
-    i2c.write8(GYRO.CTRL_REG1_G, 0x0F) #normal mode, all axes    
+    i2c.write8(GYRO.CTRL_REG1_G, 0x0F) #normal mode, all axes
     #set gyro scale
     scaleVal = GYRO.RANGE_G[fullScale]
     regVal = 0x00 | scaleVal
     i2c.write8(GYRO.CTRL_REG4_G,regVal)
     print regVal
     return 0
-    
+
 def getAccel(fullScale):
     i2c = FT232H.I2CDevice(ft232h,XM.ADDRESS)
     cal = XM.CAL_A[fullScale]
@@ -100,7 +102,7 @@ def getRotation(fullScale):
     gy_H = i2c.readU8(0x2B)
     gz_L = i2c.readU8(0x2C)
     gz_H = i2c.readU8(0x2D)
-    
+
     gx = np.int16(gx_L | (gx_H <<8))*cal
     gy = np.int16(gy_L | (gy_H <<8))*cal
     gz = np.int16(gz_L | (gz_H <<8))*cal
@@ -119,8 +121,8 @@ def returnIMU(queue,fullScaleA = "2G",fullScaleG = "245DPS",fullScaleM = "4GAUSS
         mx,my,mz = getMag(fullScaleM)
         #-save values
         queue.put(np.asarray([ax,ay,az,gx,gy,gz,mx,my,mz]))
-    
-    
+
+
 def recordSerial(queue,portGPS = 'COM3'):
     '''
     too lagit 2 quit, use a flag to raise exception to kill thread. Python cant stop wont stop
@@ -144,4 +146,3 @@ def recordSerial(queue,portGPS = 'COM3'):
         queue.put(m)
         ser.flushInput()
         ser.flushOutput()
-    
